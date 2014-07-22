@@ -11,7 +11,15 @@ https://docs.djangoproject.com/en/1.6/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+SETTINGS_DIR = os.path.dirname(__file__)
 
+print "base directory is" + BASE_DIR
+print SETTINGS_DIR
+
+PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
+print "project path "+ PROJECT_PATH
+PROJECT_PATH = os.path.abspath(PROJECT_PATH)
+print "project path2 "+ PROJECT_PATH
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
@@ -83,3 +91,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.6/howto/static-files/
 
 STATIC_URL = '/static/'
+
+TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
+
+TEMPLATE_DIRS = (
+    TEMPLATE_PATH,
+
+)
