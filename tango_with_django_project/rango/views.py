@@ -10,5 +10,13 @@ def index(request):
 
     return render_to_response('rango/index.html', context_dict, context)
 
+def about(request):
+
+    context = RequestContext(request)
+
+    context_dict = {'boldmessage': "Testing testing 12 12"}
+
+    return render_to_response("rango/about.html", context_dict, context)
+
 
 
